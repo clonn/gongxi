@@ -4,7 +4,10 @@
   "description": "恭喜系列 cli",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "./node_modules/mocha/bin/mocha"
+  },
+  "bin": {
+    "gongxi": "./bin/gongxi"
   },
   "repository": {
     "type": "git",

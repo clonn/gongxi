@@ -1,0 +1,23 @@
+{
+  "name": "gongxi",
+  "version": "1.0.0",
+  "description": "恭喜系列 cli",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/clonn/gongxi"
+  },
+  "keywords": [
+    "gong",
+    "xi"
+  ],
+  "author": "clonn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/clonn/gongxi/issues"
+  },
+  "homepage": "https://github.com/clonn/gongxi"
+}

@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+
+var program = require('commander');
+var fs = require("fs");
+var gongxi = require("../index");
+
+program
+  .version(JSON.parse(fs.readFileSync(__dirname + '/../package.json', 'utf8')).version)
+  .usage('[debug] [options] [files]')
+  .option("facai", "隨機產生 恭喜發財 吉祥話")
+
+// program.on('faCai', function(val){
+//   globals = globals.concat(list(val));
+// });
+
+program
+  .command('faCai')
+  .description('隨機產生 恭喜發財 吉祥話')
+  .action(function(path){
+    console.log(gongxi.faCai());
+    process.exit(0);
+  });
+
+program.parse(process.argv);

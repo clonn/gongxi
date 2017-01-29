@@ -1,6 +1,6 @@
 {
   "name": "gongxi",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "恭喜系列 cli",
   "main": "index.js",
   "scripts": {
@@ -29,6 +29,8 @@
   },
   "dependencies": {
     "commander": "^2.6.0",
-    "lodash": "^3.2.0"
+    "image-to-ascii": "^3.0.5",
+    "lodash": "^3.2.0",
+    "request": "^2.79.0"
   }
 }

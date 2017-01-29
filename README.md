@@ -14,6 +14,19 @@ npm install -g gonxi
 gongxi faCai
 ```
 
+or 
+
+```
+gongxi giphy
+```
+
+it will render a image to Ascii, like,
+
+
+
+## Changelog
+ * 2017/01 Add `giphy` parameter, image to ascii.
+
 ##todo
 
  * 補完 恭喜發財

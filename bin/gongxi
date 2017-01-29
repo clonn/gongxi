@@ -2,12 +2,15 @@
 
 var program = require('commander');
 var fs = require("fs");
+var request = require('request');
+var imageToAscii = require("image-to-ascii");
 var gongxi = require("../index");
 
 program
   .version(JSON.parse(fs.readFileSync(__dirname + '/../package.json', 'utf8')).version)
   .usage('[debug] [options] [files]')
   .option("facai", "隨機產生 恭喜發財 吉祥話")
+  .option("giphy", "Get New year image from giphy");
 
 // program.on('faCai', function(val){
 //   globals = globals.concat(list(val));
@@ -20,5 +23,32 @@ program
     console.log(gongxi.faCai());
     process.exit(0);
   });
+
+program
+  .command('giphy')
+  .description('Get New year image from giphy')
+  .action(function(path){
+    var offset = Math.ceil(Math.random(0, 20) * (10-0)+0);
+    var keyword = "chinese";
+    var url = 'http://api.giphy.com/v1/gifs/search?q=' + keyword + '&limit=' + offset + '&rating=pg&offset=9&api_key=dc6zaTOxFJmzC';
+	request.get(url, function (err, res, body) {
+
+		var result = JSON.parse(body);
+		if (result.pagination.count > 0) {
+			var url_image = result.data[0].images.fixed_height.url;
+			imageToAscii(url_image, {
+			    bg: true
+			}, function(err, converted) {
+			  	console.log(err || converted);
+			  	console.log(url_image);
+			  	process.exit(0);
+			});
+		} else {
+			console.log("今年無緣");
+			process.exit(0);
+		}
+	});
+  });
+
 
 program.parse(process.argv);

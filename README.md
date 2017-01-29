@@ -22,9 +22,10 @@ gongxi giphy
 
 it will render a image to Ascii, like,
 
-
+![](https://cldup.com/IUV3Nrpt0Q.png)
 
 ## Changelog
+
  * 2017/01 Add `giphy` parameter, image to ascii.
 
 ##todo

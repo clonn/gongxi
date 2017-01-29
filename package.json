@@ -1,6 +1,6 @@
 {
   "name": "gongxi",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "恭喜系列 cli",
   "main": "index.js",
   "scripts": {
